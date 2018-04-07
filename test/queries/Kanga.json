@@ -1,0 +1,22 @@
+{
+    "title": "Testing IS",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_department": "test"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {"error":"courses_department is not a valid key"}
+    }
+}

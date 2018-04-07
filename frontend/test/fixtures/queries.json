@@ -1,0 +1,268 @@
+{
+
+    "query1": {
+        "WHERE": {
+            "IS": {
+                "courses_dept": "cpsc"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "courses_id"
+                ]
+            }
+        }
+    },
+
+    "query2": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "rooms_furniture": "*Tables*"
+                    }
+                },
+                {
+                    "GT": {
+                        "rooms_seats": 300
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_shortname"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+
+    "query3":
+    {
+        "WHERE": {
+            "NOT": {
+                "GT": {
+                    "courses_avg": 0
+                }
+
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id"
+            ]
+        }
+    },
+    "query4":{
+        "WHERE": {
+            "OR": [
+                {
+                    "IS": {
+                        "rooms_furniture": "*Tables*"
+                    }
+                },
+                {
+                    "NOT": {
+                        "GT": {
+                            "rooms_seats": 300
+                        }
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_shortname"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "query5":{
+        "WHERE": {
+            "NOT": {
+                "OR": [
+                    {
+                        "IS": {
+                            "rooms_furniture": "*Tables*"
+                        }
+                    },
+                    {
+                        "NOT": {
+                            "GT": {
+                                "rooms_seats": 300.3
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_shortname"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+
+    "query6":{
+        "WHERE": {
+            "NOT": {
+                "OR": [
+                    {
+                        "NOT": {
+                            "EQ": {
+                                "courses_avg": 100
+                            }
+                        }
+                    },
+                    {
+                        "IS": {
+                            "courses_dept": "cpsc"
+                        }
+                    },
+                    {
+                        "GT": {
+                            "courses_fail": 32
+                        }
+                    }
+                ]
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "courses_dept",
+                "countThing",
+                "sumThing"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "courses_avg",
+                    "courses_dept"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_avg",
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "countThing": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "sumThing": {
+                        "COUNT": "courses_dept"
+                    }
+                }
+            ]
+        }
+    },
+    "query7":{
+        "WHERE": {
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_href",
+                "rooms_number",
+                "rooms_seats",
+                "rooms_type",
+                "LatThing"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "rooms_href",
+                    "rooms_number",
+                    "rooms_seats",
+                    "rooms_type"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_href",
+                "rooms_number",
+                "rooms_seats",
+                "rooms_type"
+            ],
+            "APPLY": [
+                {
+                    "LatThing": {
+                        "SUM": "rooms_lat"
+                    }
+                }
+            ]
+        }
+    }
+
+}
+
+
+
+

@@ -1,0 +1,44 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "max",
+                "count",
+                "average"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "max": {
+                        "MAX": "courses_avg"
+                    }
+                },
+                {
+                    "count": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "average": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_dept":"cnps","max":99.19,"count":2,"average":98.04},{"courses_dept":"crwr","max":98,"count":1,"average":98},{"courses_dept":"educ","max":97.5,"count":1,"average":97.5},{"courses_dept":"eece","max":98.75,"count":1,"average":98.75},{"courses_dept":"epse","max":98.8,"count":13,"average":98.01},{"courses_dept":"math","max":99.78,"count":4,"average":97.9},{"courses_dept":"nurs","max":98.71,"count":6,"average":98.14},{"courses_dept":"spph","max":98.98,"count":1,"average":98.98}]}
+    }
+}

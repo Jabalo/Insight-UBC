@@ -1,0 +1,54 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_dept": "cpsc"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_id": "304"
+                    }
+                },
+                {
+                    "NOT": {
+                        "IS": {
+                            "courses_instructor": ""
+                        }
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_instructor",
+                "courses_avg",
+                "overallAvg"
+            ],
+            "ORDER": "overallAvg"
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_id",
+                "courses_instructor"
+            ],
+            "APPLY": [
+                {
+                    "overallAvg": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "All COLUMNS keys need to be either in GROUP or in APPLY"
+        }
+    }
+}

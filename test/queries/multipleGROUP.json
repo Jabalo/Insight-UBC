@@ -1,0 +1,120 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "rooms_furniture": "*a*"
+                    }
+                },
+                {
+                    "GT": {
+                        "rooms_seats": 250
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "rooms_type",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats",
+                    "rooms_shortname"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_type",
+                "rooms_shortname"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "WOOD",
+                    "maxSeats": 503
+                },
+                {
+                    "rooms_type": "Open Design General Purpose",
+                    "rooms_shortname": "OSBO",
+                    "maxSeats": 442
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "CIRS",
+                    "maxSeats": 426
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "HEBB",
+                    "maxSeats": 375
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "LSC",
+                    "maxSeats": 350
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "ESB",
+                    "maxSeats": 350
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "WESB",
+                    "maxSeats": 325
+                },
+                {
+                    "rooms_type": "TBD",
+                    "rooms_shortname": "SRC",
+                    "maxSeats": 299
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "SCRF",
+                    "maxSeats": 280
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "BUCH",
+                    "maxSeats": 275
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "CHEM",
+                    "maxSeats": 265
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "ANGU",
+                    "maxSeats": 260
+                },
+                {
+                    "rooms_type": "Tiered Large Group",
+                    "rooms_shortname": "HENN",
+                    "maxSeats": 257
+                }
+            ]
+        }
+    }
+}
+
+

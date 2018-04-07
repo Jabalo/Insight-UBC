@@ -1,0 +1,35 @@
+{
+    "title": "Testing AND",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_dept": "germ"
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 90
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [ {"courses_dept": "germ", "courses_avg": 92.25},
+                        {"courses_dept": "germ", "courses_avg": 92.25}
+            ]
+        }
+    }
+}

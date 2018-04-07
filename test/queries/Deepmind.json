@@ -1,0 +1,40 @@
+{
+    "title": "Should be able to find sections in a dept with average between 70 and 80.",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                       "courses_dept": "germ"
+                    }
+                },
+                {
+                    "GT": {
+                        "courses_avg": 90
+                    }
+                },
+                {
+                    "LT": {
+                        "courses_avg": 95
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [ {"courses_dept": "germ", "courses_avg": 92.25},
+                        {"courses_dept": "germ", "courses_avg": 92.25}
+            ]
+        }
+    }
+}

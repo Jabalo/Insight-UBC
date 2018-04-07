@@ -1,0 +1,44 @@
+{
+    "title": "Nested filters and operations",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "NOT":[
+                        {
+                            "LT": {
+                                "courses_avg":0
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_dept":"lfs"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "EQ": {
+                        "courses_avg":0
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+                {"error":"Query contains too many parameters"}
+            ]
+        }
+    }
+}

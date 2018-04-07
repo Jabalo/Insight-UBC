@@ -1,0 +1,7 @@
+{
+    "query1": "simple query IS comparison for department with two columns and old order syntax",
+    "query2": "more complex query AND with rooms",
+    "query3": "simple query with NOT with courses, no ORDER",
+    "query4": "more complex query OR with rooms",
+    "query5": "more complex query NOT, with checked NOT"
+}

@@ -1,0 +1,32 @@
+{
+    "title": "Testing Double NOT",
+    "query": {
+        "WHERE": {
+            "NOT": {
+                "NOT": {
+                    "EQ": {
+                        "courses_avg": 50
+                    }
+                }
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id",
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_id": "441", "courses_dept": "busi" },
+                { "courses_id": "474", "courses_dept": "chbe"},
+                { "courses_id": "315", "courses_dept": "psyc"}
+            ]
+        }
+    }
+}

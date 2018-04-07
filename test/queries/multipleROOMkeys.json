@@ -1,0 +1,41 @@
+{
+    "title": "Testing query with rooms dataset",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "rooms_seats": 250
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "rooms_lat",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": [
+                    "maxSeats", "rooms_lat"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_shortname",
+                "rooms_lat"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_seats"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_shortname":"WOOD","rooms_lat":49.26478,"maxSeats":503},{"rooms_shortname":"OSBO","rooms_lat":49.26047,"maxSeats":442},{"rooms_shortname":"CIRS","rooms_lat":49.26207,"maxSeats":426},{"rooms_shortname":"HEBB","rooms_lat":49.2661,"maxSeats":375},{"rooms_shortname":"ESB","rooms_lat":49.26274,"maxSeats":350},{"rooms_shortname":"LSC","rooms_lat":49.26236,"maxSeats":350},{"rooms_shortname":"WESB","rooms_lat":49.26517,"maxSeats":325},{"rooms_shortname":"SRC","rooms_lat":49.2683,"maxSeats":299},{"rooms_shortname":"SCRF","rooms_lat":49.26398,"maxSeats":280},{"rooms_shortname":"BUCH","rooms_lat":49.26826,"maxSeats":275},{"rooms_shortname":"CHEM","rooms_lat":49.2659,"maxSeats":265},{"rooms_shortname":"ANGU","rooms_lat":49.26486,"maxSeats":260},{"rooms_shortname":"HENN","rooms_lat":49.26627,"maxSeats":257}]}
+    }
+}

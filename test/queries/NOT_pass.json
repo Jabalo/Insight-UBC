@@ -1,0 +1,31 @@
+{
+    "title": "Testing NOT",
+    "query": {
+        "WHERE": {
+                "NOT": {
+                    "GT": {
+                        "courses_avg": 0
+                    }
+
+                }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_id",
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_id": "202", "courses_dept": "frst" },
+                { "courses_id": "100", "courses_dept": "lfs"},
+                { "courses_id": "100", "courses_dept": "lfs"}
+            ]
+        }
+    }
+}

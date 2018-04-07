@@ -1,0 +1,25 @@
+{
+    "title": "Testing OR",
+    "query": {
+        "WHERE": {
+            "OR": [
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_id"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+                {"error":"Invalid query: OR should contain at least one condition"}
+            ]
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 99
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "courses_avg"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_avg"
+            ],
+            "APPLY": []
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_avg":99.19},{"courses_avg":99.78}]}
+    }
+}

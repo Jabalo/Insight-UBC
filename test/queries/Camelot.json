@@ -1,0 +1,50 @@
+{
+    "title": "Should be able to find course average for a course.",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_dept": "cpsc"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_id": "500"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [ {"courses_avg": 78.87},
+                        {"courses_avg": 78.87},
+                        {"courses_avg": 81.25},
+                        {"courses_avg": 81.25},
+                        {"courses_avg": 83},
+                        {"courses_avg": 83},
+                        {"courses_avg": 83.17},
+                        {"courses_avg": 83.17},
+                        {"courses_avg": 84.85},
+                        {"courses_avg": 84.85},
+                        {"courses_avg": 85.78},
+                        {"courses_avg": 85.78},
+                        {"courses_avg": 86.13},
+                        {"courses_avg": 86.13},
+                        {"courses_avg": 86.22},
+                        {"courses_avg": 86.22},
+                        {"courses_avg": 86.33},
+                        {"courses_avg": 86.33}
+            ]
+        }
+    }
+}

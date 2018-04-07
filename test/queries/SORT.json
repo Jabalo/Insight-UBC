@@ -1,0 +1,27 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "rooms_fullname": "Buchanan"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_fullname",
+                "rooms_furniture"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "rooms_furniture"
+                ]
+            }
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Fixed Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Fixed Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Moveable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Moveable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tables/Moveable Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Fixed Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Movable Tablets"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Moveable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Moveable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Moveable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Moveable Tables & Chairs"},{"rooms_fullname":"Buchanan","rooms_furniture":"Classroom-Moveable Tables & Chairs"}]
+        }
+    }
+}

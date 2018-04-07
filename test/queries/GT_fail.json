@@ -1,0 +1,23 @@
+{
+    "title": "Testing GT",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg":"test"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": "Invalid query: GT value should be a number"}
+        }
+    }
+

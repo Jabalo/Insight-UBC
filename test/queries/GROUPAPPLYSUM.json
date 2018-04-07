@@ -1,0 +1,44 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "overallSum"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept"
+            ],
+            "APPLY": [
+                {
+                    "overallSum": {
+                        "SUM": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result":[
+                {"courses_dept":"cnps","overallSum":294.13},
+                {"courses_dept":"crwr","overallSum":196},
+                {"courses_dept":"educ","overallSum":97.5},
+                {"courses_dept":"eece","overallSum":197.5},
+                {"courses_dept":"epse","overallSum":1862.24},
+                {"courses_dept":"math","overallSum":783.2},
+                {"courses_dept":"nurs","overallSum":1177.72},
+                {"courses_dept":"spph","overallSum":197.96}
+            ]
+        }
+    }
+}
+

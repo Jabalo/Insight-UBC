@@ -1,0 +1,20 @@
+{
+    "title": "Testing no ORDER in COLUMNS",
+    "query": {
+        "WHERE": {
+            "LT": {
+                "courses_avg": 50
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept"
+            ],
+            "ORDER": "courses_avg"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": { "error":"Order key needs to be included in columns"}
+    }
+}

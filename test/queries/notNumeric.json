@@ -1,0 +1,36 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 99
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_avg",
+                "uniqueKey"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_avg"
+            ],
+            "APPLY": [
+                {
+                    "uniqueKey": {
+                        "SUM": "courses_dept"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result":[
+                {"error": ""}
+            ]
+        }
+    }
+}

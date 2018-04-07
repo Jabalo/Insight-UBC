@@ -1,0 +1,31 @@
+{
+    "title": "Testing EQ",
+    "query": {
+        "WHERE": {
+            "EQ": {
+                "courses_pass": 0
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "busi"},
+                { "courses_dept": "busi"},
+                { "courses_dept": "fopr"},
+                { "courses_dept": "frst"},
+                { "courses_dept": "lfs"},
+                { "courses_dept": "lfs"},
+                { "courses_dept": "wood"}
+            ]
+        }
+    }
+}

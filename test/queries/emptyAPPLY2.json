@@ -1,0 +1,46 @@
+{
+    "title": "Testing GROUP with APPLY",
+    "query": {
+        "WHERE": {
+            "AND": [{
+                "IS": {
+                    "rooms_furniture": "*Tables*"
+                }
+            }, {
+                "GT": {
+                    "rooms_seats": 200
+                }
+            }]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "rooms_seats"
+
+
+            ],
+            "ORDER": {
+                "dir": "DOWN",
+                "keys": ["rooms_shortname"]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": ["rooms_shortname", "rooms_seats"],
+            "APPLY": []
+        }
+    }
+,
+    "response": {
+        "code": 200,
+        "body": {
+            "result":[
+                {"rooms_shortname":"SRC","rooms_seats":299},
+                {"rooms_shortname":"PHRM","rooms_seats":236},
+                {"rooms_shortname":"OSBO","rooms_seats":442},
+                {"rooms_shortname":"LSK","rooms_seats":205},
+                {"rooms_shortname":"LSC","rooms_seats":350},
+                {"rooms_shortname":"HEBB","rooms_seats":375},
+                {"rooms_shortname":"ANGU","rooms_seats":260}
+            ]
+        }}
+}

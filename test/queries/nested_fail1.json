@@ -1,0 +1,36 @@
+{
+    "title": "Invalid nested key should result in 400",
+    "query": {
+        "WHERE": {
+            "IS": [
+                {
+                    "IS": {
+                        "courses_dept": "test"
+                    }
+                },
+                {
+                    "EQ": {
+                        "courses_avg": 40
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_id",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "result": [
+                {"error":"Query contains too many parameters"}
+            ]
+        }
+    }
+}

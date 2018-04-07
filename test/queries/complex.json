@@ -1,0 +1,46 @@
+{
+    "title": "Testing no ORDER in COLUMNS",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "courses_avg": 97
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "max",
+                "count",
+                "average"
+            ]
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "APPLY": [
+                {
+                    "max": {
+                        "MAX": "courses_avg"
+                    }
+                },
+                {
+                    "count": {
+                        "COUNT": "courses_avg"
+                    }
+                },
+                {
+                    "average": {
+                        "AVG": "courses_avg"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {"result":[{"courses_dept":"cnps","courses_avg":99.19,"max":99.19,"count":1,"average":99.19},{"courses_dept":"cnps","courses_avg":97.47,"max":97.47,"count":1,"average":97.47},{"courses_dept":"crwr","courses_avg":98,"max":98,"count":1,"average":98},{"courses_dept":"educ","courses_avg":97.5,"max":97.5,"count":1,"average":97.5},{"courses_dept":"eece","courses_avg":98.75,"max":98.75,"count":1,"average":98.75},{"courses_dept":"epse","courses_avg":98.08,"max":98.08,"count":1,"average":98.08},{"courses_dept":"epse","courses_avg":98.7,"max":98.7,"count":1,"average":98.7},{"courses_dept":"epse","courses_avg":98.36,"max":98.36,"count":1,"average":98.36},{"courses_dept":"epse","courses_avg":97.29,"max":97.29,"count":1,"average":97.29},{"courses_dept":"epse","courses_avg":98.8,"max":98.8,"count":1,"average":98.8},{"courses_dept":"epse","courses_avg":97.41,"max":97.41,"count":1,"average":97.41},{"courses_dept":"epse","courses_avg":98.58,"max":98.58,"count":1,"average":98.58},{"courses_dept":"epse","courses_avg":98.76,"max":98.76,"count":1,"average":98.76},{"courses_dept":"epse","courses_avg":98.45,"max":98.45,"count":1,"average":98.45},{"courses_dept":"epse","courses_avg":97.78,"max":97.78,"count":1,"average":97.78},{"courses_dept":"epse","courses_avg":97.69,"max":97.69,"count":1,"average":97.69},{"courses_dept":"epse","courses_avg":97.09,"max":97.09,"count":1,"average":97.09},{"courses_dept":"epse","courses_avg":97.67,"max":97.67,"count":1,"average":97.67},{"courses_dept":"math","courses_avg":97.25,"max":97.25,"count":1,"average":97.25},{"courses_dept":"math","courses_avg":99.78,"max":99.78,"count":1,"average":99.78},{"courses_dept":"math","courses_avg":97.48,"max":97.48,"count":1,"average":97.48},{"courses_dept":"math","courses_avg":97.09,"max":97.09,"count":1,"average":97.09},{"courses_dept":"nurs","courses_avg":98.71,"max":98.71,"count":1,"average":98.71},{"courses_dept":"nurs","courses_avg":98.21,"max":98.21,"count":1,"average":98.21},{"courses_dept":"nurs","courses_avg":97.53,"max":97.53,"count":1,"average":97.53},{"courses_dept":"nurs","courses_avg":98.5,"max":98.5,"count":1,"average":98.5},{"courses_dept":"nurs","courses_avg":98.58,"max":98.58,"count":1,"average":98.58},{"courses_dept":"nurs","courses_avg":97.33,"max":97.33,"count":1,"average":97.33},{"courses_dept":"spph","courses_avg":98.98,"max":98.98,"count":1,"average":98.98}]}
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "title": "Testing IS",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_uuid": "25945"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {"courses_dept": "test", "courses_avg": 60}
+            ]
+        }
+    }
+}

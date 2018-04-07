@@ -1,0 +1,39 @@
+{
+    "title": "Testing query with rooms dataset",
+    "query": {
+        "WHERE": {
+            "GT": {
+                "rooms_lat": 49.2666
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "rooms_shortname",
+                "maxSeats"
+            ],
+            "ORDER": {
+                "dir": "UP",
+                "keys": [
+                    "rooms_shortname"
+                ]
+            }
+        },
+        "TRANSFORMATIONS": {
+            "GROUP": [
+                "rooms_shortname"
+            ],
+            "APPLY": [
+                {
+                    "maxSeats": {
+                        "MAX": "rooms_lat"
+                    }
+                }
+            ]
+        }
+    },
+    "response": {
+        "code": 200,
+        "body":
+        {"result":[{"rooms_shortname":"ALRD","maxSeats":49.2699},{"rooms_shortname":"ANSO","maxSeats":49.26958},{"rooms_shortname":"BRKX","maxSeats":49.26862},{"rooms_shortname":"BUCH","maxSeats":49.26826},{"rooms_shortname":"IBLC","maxSeats":49.26766},{"rooms_shortname":"IONA","maxSeats":49.27106},{"rooms_shortname":"LASR","maxSeats":49.26767},{"rooms_shortname":"SRC","maxSeats":49.2683},{"rooms_shortname":"UCLL","maxSeats":49.26867}]}
+    }
+}

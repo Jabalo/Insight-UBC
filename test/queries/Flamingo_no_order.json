@@ -1,0 +1,48 @@
+{
+    "title": "Should be able to find all courses taught by a set of instructors",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_instructor": "*bevier, mary lou*"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor": "*bustin, robert marc*"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor": "*golding, martyn*"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor": "*mortensen, james*"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_instructor": "*smith, paul laurence*"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_instructor"
+            ],
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [ {"courses_dept": "eosc", "courses_instructor": "bevier, mary lou;bustin, robert marc;golding, martyn;mortensen, james;smith, paul laurence"}
+            ]
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "title": "Should be able to find all courses taught by a set of instructors",
+    "query": {
+        "WHERE": {
+            "AND": [
+                {
+                    "IS": {
+                        "courses_instructor": "*"
+                    }
+                },
+                {
+                    "IS": {
+                        "courses_dept": "aanb"
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_uuid"
+            ],
+            "ORDER": "courses_uuid",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {"courses_dept": "aanb", "courses_uuid": "31379"},
+                {"courses_dept": "aanb", "courses_uuid": "31380"},
+                {"courses_dept": "aanb", "courses_uuid": "31381"},
+                {"courses_dept": "aanb", "courses_uuid": "31382"}
+            ]
+        }
+    }
+}

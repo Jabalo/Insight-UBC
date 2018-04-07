@@ -1,0 +1,46 @@
+{
+    "title": "Nested filters and operations",
+    "query": {
+        "WHERE": {
+            "OR": [
+                {
+                    "AND":[
+                        {
+                            "LT": {
+                                "courses_avg":0
+                            }
+                        },
+                        {
+                            "IS": {
+                                "courses_dept":"lfs"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "EQ": {
+                        "courses_avg":0
+                    }
+                }
+            ]
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                {"courses_dept": "frst", "courses_avg": 0 },
+                {"courses_dept": "lfs", "courses_avg": 0 },
+                {"courses_dept": "lfs", "courses_avg": 0 }
+            ]
+        }
+    }
+}

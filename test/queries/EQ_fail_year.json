@@ -1,0 +1,23 @@
+{
+    "title": "Testing EQ with Year",
+    "query": {
+        "WHERE": {
+            "EQ": {
+                "courses_year": "2000"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 400,
+        "body": {
+            "error": ""
+        }
+    }
+}

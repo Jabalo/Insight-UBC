@@ -1,0 +1,24 @@
+{
+    "title": "Testing LT",
+    "query": {
+        "WHERE": {
+            "LT": {
+                "courses_pass": 0
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept"
+            ],
+            "ORDER": "courses_dept",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+            ]
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "title": "Testing IS",
+    "query": {
+        "WHERE": {
+            "IS": {
+                "courses_dept": "*nb"
+            }
+        },
+        "OPTIONS": {
+            "COLUMNS": [
+                "courses_dept",
+                "courses_avg",
+                "courses_uuid"
+            ],
+            "ORDER": "courses_avg",
+            "FORM": "TABLE"
+        }
+    },
+    "response": {
+        "code": 200,
+        "body": {
+            "result": [
+                { "courses_dept": "aanb", "courses_avg": 87.83, "courses_uuid": "31381"},
+                { "courses_dept": "aanb", "courses_avg": 87.83, "courses_uuid": "31382"},
+                { "courses_dept": "aanb", "courses_avg": 94.44, "courses_uuid": "31379"},
+                { "courses_dept": "aanb", "courses_avg": 94.44, "courses_uuid": "31380"}
+            ]
+        }
+    }
+}

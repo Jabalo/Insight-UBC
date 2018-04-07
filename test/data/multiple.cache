@@ -1,0 +1,26 @@
+{
+	"one": {
+		"data": [],
+		"details": {
+			"id": "one",
+			"kind": "courses",
+			"numRows": 1
+		}
+	},
+	"two": {
+		"data": [],
+		"details": {
+			"id": "two",
+			"kind": "courses",
+			"numRows": 2
+		}
+	},
+	"three": {
+		"data": [],
+		"details": {
+			"id": "three",
+			"kind": "courses",
+			"numRows": 3
+		}
+	}
+}
